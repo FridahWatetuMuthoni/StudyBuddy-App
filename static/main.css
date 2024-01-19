@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 2px gray;
+  padding: 20px 50px;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  cursor: pointer;
+  display: inline;
+  padding: 1rem;
+}
+
+.rooms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.room {
+  padding: 50px 20px;
+  box-shadow: 1px 1px 2px gray;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 20px;
+}
+
+.content {
+  border: 2px solid rgb(0, 4, 255);
+}
+
+.recent {
+  border: 2px solid green;
+  padding: 20px;
+}
+
+.topics {
+  border: 2px solid red;
+  padding: 20px;
+}
+
+.rooms-heading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.messages {
+  color: white;
+  text-align: center;
+  list-style: none;
+  border-radius: 4px;
+  background-color: rgba(255, 0, 0, 0.425);
+  box-shadow: 1px 1px 2px gray;
+  padding: 20px;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.login_register_form {
+  box-shadow: 1px 1px 2px gray;
+  padding: 50px;
+  min-width: 600px;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.login_register_form input {
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 1px 1px 2px gray;
+  border: none;
+  border-radius: 4px;
+}
+
+.login_register_form input:focus {
+  box-shadow: 3px 3px 4px gray;
+  outline: none;
+  border-radius: 4px;
+}
+
+.login_register_form button {
+  padding: 15px;
+  margin: 20px 0;
+  box-shadow: 1px 1px 2px gray;
+  border: none;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+}

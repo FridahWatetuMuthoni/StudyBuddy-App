@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <h1>Study Buddy</h1>
+  <ul>
+    {% if user.is_authenticated %}
+    <li><h3>Hello {{request.user}}</h3></li>
+    <li><a class="nav-links" href="{% url 'home' %}">Home</a></li>
+    <li><a class="nav-links" href="{% url 'logout' %}">Logout</a></li>
+    {% else %}
+    <li><a class="nav-links" href="{% url 'login' %}">Login</a></li>
+    {% endif %}
+  </ul>
+  <form action="{% url 'home' %}" method="get">
+    <input type="text" name="q" id="search" placeholder="Search Rooms...." />
+  </form>
+</nav>

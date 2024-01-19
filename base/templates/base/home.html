@@ -1,0 +1,41 @@
+{% extends '../base.html' %} {% block content %}
+<div class="home">
+  <section class="topics">
+    <h1>Browse Topics</h1>
+    <div><a href="{% url 'home' %}">All</a></div>
+    {% for topic in topics %}
+    <div>
+      <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="content">
+    <h1 class="heading">Home Page Using Templates</h1>
+    <div class="rooms-heading rooms">
+      <h5>{{rooms_count}} room{% if rooms_count > 1%}s{% endif %} available</h5>
+      <a href="{% url 'create_room' %}">Create Room</a>
+    </div>
+    <section class="rooms">
+      {% for room in rooms %}
+      <div class="room">
+        <h6>@{{room.host.username}}</h6>
+        <h3>
+          {{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a>
+        </h3>
+        <p>{{room.description|truncatechars:200}}</p>
+        {% if request.user == room.host%}
+        <div>
+          <a href="{% url 'update_room' room.id %}">Update Room</a>
+          <a href="{% url 'delete_room' room.id %}">Delete Room</a>
+        </div>
+        {% endif %}
+        <small>{{room.topic.name}}</small>
+      </div>
+      {% endfor %}
+    </section>
+  </section>
+  <section class="recent">
+    <h1>Recent Activities</h1>
+  </section>
+</div>
+{% endblock %}

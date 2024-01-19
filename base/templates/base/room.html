@@ -1,0 +1,14 @@
+{% extends '../base.html' %} {% block content %}
+<h1 class="heading">Room Page Using Templates</h1>
+<section class="rooms">
+  <div class="room">{{room.id}} -- {{room.name}}</div>
+</section>
+<div class="comment-wrapper">
+  <h1>Conversations</h1>
+  {% for room_message in room_messages %}
+  <h4>@{{room_message.user}} {{room_message.created|timesince}}</h4>
+  <hr />
+  <p>{{room_message.body}}</p>
+  {% endfor %}
+</div>
+{% endblock %}
